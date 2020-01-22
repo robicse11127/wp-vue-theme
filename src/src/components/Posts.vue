@@ -9,6 +9,7 @@
 
 <script>
     import axios from 'axios';
+    import config from '../config';
     export default {
         name: 'Posts',
         data: function() {
@@ -21,7 +22,7 @@
         },
         methods: {
             fetchPosts: function() {
-                axios.get( 'http://localhost/wp-react/wp-json/wp/v2/posts', {
+                axios.get( config.app_url + '/wp-json/wp/v2/posts', {
                     params: {
                         per_page: 20
                     }

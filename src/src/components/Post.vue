@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    import config from '../config';
     import axios from 'axios';
     export default {
         name: 'Post',
@@ -22,15 +23,14 @@
         },
         methods: {
             fetchPost: function() {
-                axios.get( 'http://localhost/wp-react/wp-json/wp/v2/posts', {
+                axios.get( config.app_url + '/wp-json/wp/v2/posts', {
                     params: {
-                        slug: 'dapibusnam-gordianorum-impleri-metus-domus-imitari-ap-quaeritando-ulla'
+                        slug: this.$route.params.slug
                     },
                 })
                 .then( (res) => {
                     this.posts = res.data
-                    console.log(res)
-                } )
+                })
             }
         }
     }
