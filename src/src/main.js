@@ -12,8 +12,8 @@ import Page from './components/Page.vue';
 
 const routes = [
 	{ path: '/wp-react', component: Posts },
-	{ path: '/wp-react/page', component: Page },
-	{ path: '/wp-react/:slug', component: Post },
+	{ path: '/wp-react/:slug', component: Page },
+	{ path: '/wp-react/post/:slug', component: Post },
 ]
 
 const router = new VueRouter({
